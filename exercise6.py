@@ -1,4 +1,4 @@
-#! /bin/bash
+
 
 while True:
     answer = int(input('When was Python 1.0 released? '))
