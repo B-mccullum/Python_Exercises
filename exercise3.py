@@ -1,4 +1,4 @@
-#! /bin/bash
+
 
 
 login = input('Enter your login: ')
