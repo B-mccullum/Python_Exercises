@@ -1,4 +1,4 @@
-#! /bin/bash
+
 
 purchase_days_ago = int(input('How many days ago have you purchased the item? '))
 is_used = input('Have you used the item at all [y/n]? ')
