@@ -21,11 +21,15 @@ def delete_objects(client, buckets, keys):
     
     return response
         
-bucket = "bmccullum-boto3-06022023"
-key = "test_text.txt"
 
-s3= boto3.client('s3')
-
-keys = ["test_text_string.txt", "test_text_upload.txt"]
-
-delete_objects(s3, bucket, keys)
+if __name__ == '__main__':
+    bucket = "bmccullum-boto3-06022023"
+    s3= boto3.client('s3')
+    
+    prefix="folder/fodlera/"
+    
+    keys = list_objects_keys(s3, bucket, prefix=prefix)
+    
+    keys = [key for key in keys if "/" not in key[len(prefix):]]
+    print(keys)
+    delete_objects(s3, bucket, keys)
