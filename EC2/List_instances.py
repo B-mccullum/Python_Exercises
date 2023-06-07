@@ -13,11 +13,17 @@ for reservation in response["Reservations"]:
         print(instance["InstanceId"], instance["InstanceType"], instance["ImageId"], 
               instance["VpcId"], instance["SubnetId"], instance["State"]["Name"])
         
+        if "VpcId" in instance:
+            instance["VpcId"]
+            
+        if "SubnetId" in instance:
+            instance["SubnetId"]
+        
+        if "Tags" in instance:
         # Iterate over tags associated with the instance
-        for tag in instance["Tags"]:
-            # Print the value of the "Name" tag
-            if tag["Key"] == "Name":
-                print(tag["Value"])
+            for tag in instance["Tags"]:
+                if tag["Key"] == "Name":
+                    print(tag["Value"])
                 
         # Iterate over security groups associated with the instance
         for sg in instance["SecurityGroups"]:
